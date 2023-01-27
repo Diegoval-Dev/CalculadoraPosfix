@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ReadFile {
     //URL DEL ARCHIVO A LEER, FAVOR DE MODIFICAR ANTES DE USAR.
-    public String fileURL = "D:\\EstructuraDeDatosUVG\\CalculadoraPosfix\\src\\FileTXT\\example1.txt";
+    public String fileURL = "C:\\JAVAUVG\\CalculadoraPosfix\\src\\FileTXT\\example1.txt";
     public ArrayList<String> postFixExpresion = new ArrayList<>();
     public ArrayList<String> returnPostFix(){
         try {
@@ -24,3 +24,4 @@ public class ReadFile {
         return postFixExpresion;
     }
 }
+

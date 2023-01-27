@@ -41,6 +41,7 @@ public class PostfixCalculator implements IPostfixCalculator{
         }
     }
 
+
     @Override
     public ArrayList<String> getItems(String _expresion) {
         ArrayList<String> arrItems = new ArrayList();
