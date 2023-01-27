@@ -14,7 +14,9 @@ public class ReadFile {
             File myObj = new File(fileURL);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                postFixExpresion.add(myReader.nextLine());
+                String line = myReader.nextLine();
+                String lineWithoutSpaces = line.replaceAll(" ","");
+                postFixExpresion.add(lineWithoutSpaces);
             }
             myReader.close();
         } catch (FileNotFoundException e) {

@@ -13,6 +13,7 @@ class MainTest {
         ReadFile rd = new ReadFile();
         ArrayList <String> testArr = new ArrayList<>();
         testArr = rd.returnPostFix();
-        System.out.println(testArr.get(0));
+        String line = testArr.get(0);
+        System.out.println(line);
     }
 }
