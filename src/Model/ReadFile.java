@@ -11,6 +11,11 @@ public class ReadFile {
     //C:\JAVAUVG\CalculadoraPosfix\src\FileTXT\example1.txt
     public String fileURL = "D:\\EstructuraDeDatosUVG\\CalculadoraPosfix\\src\\FileTXT\\example1.txt";
     public ArrayList<String> postFixExpresion = new ArrayList<>();
+
+    /**
+     * Funcion para leer el documento de texto
+     * @return ArrayList con una linea del calculo en cada elemento
+     */
     public ArrayList<String> returnPostFix(){
         try {
             File myObj = new File(fileURL);

@@ -8,9 +8,17 @@ import UI.UI;
 import java.util.ArrayList;
 
 public class Controller {
+    /**
+     * Metodo main
+     * @param args args
+     */
     public static void main(String[] args) {
         evaluar();
     }
+
+    /**
+     * Metodo para evaluar los elementos entrantes
+     */
     public static void evaluar(){
         UI ui = new UI();
         ArrayList<String> arrayDatos;
@@ -25,6 +33,12 @@ public class Controller {
 
 
     }
+
+    /**
+     * Funcion para obtener el resultado de la linea
+     * @param line linea del documento a evaluar
+     * @return resultado de la linea
+     */
     public static int reultOF(String line){
         PostfixCalculator calculadora = new PostfixCalculator();
         StackUsingArrayList<Integer> stack = new StackUsingArrayList();
