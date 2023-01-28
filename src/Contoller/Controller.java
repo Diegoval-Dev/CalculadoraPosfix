@@ -3,6 +3,7 @@ package Contoller;
 import Model.PostfixCalculator;
 import Model.ReadFile;
 import Model.StackUsingArrayList;
+import UI.UI;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,7 @@ public class Controller {
         evaluar();
     }
     public static void evaluar(){
+        UI ui = new UI();
         ArrayList<String> arrayDatos;
         ReadFile rd = new ReadFile();
         arrayDatos = rd.returnPostFix();
@@ -18,7 +20,7 @@ public class Controller {
         int resultado = 0;
         for (int i = 0; i < cantLineas; i++) {
             resultado = reultOF(arrayDatos.get(i));
-            System.out.println("Resultado "+resultado);
+            ui.show("Linea: "+arrayDatos.get(i) + " Resultado: " + resultado);
         }
 
 
