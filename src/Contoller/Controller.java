@@ -11,20 +11,21 @@ public class Controller {
         evaluar();
     }
     public static void evaluar(){
-        ArrayList<String> arrayDatos = new ArrayList<>();
+        ArrayList<String> arrayDatos;
         ReadFile rd = new ReadFile();
-        int cantLineas = arrayDatos.size();
         arrayDatos = rd.returnPostFix();
+        int cantLineas = arrayDatos.size();
         int resultado = 0;
         for (int i = 0; i < cantLineas; i++) {
             resultado = reultOF(arrayDatos.get(i));
+            System.out.println("Resultado "+resultado);
         }
-        System.out.println(resultado);
+
 
     }
     public static int reultOF(String line){
         PostfixCalculator calculadora = new PostfixCalculator();
-        StackUsingArrayList stack = new StackUsingArrayList();
+        StackUsingArrayList<Integer> stack = new StackUsingArrayList();
         ArrayList<String> calculo = new ArrayList<>();
         String caracter;
         int resultado = 0;
@@ -36,26 +37,30 @@ public class Controller {
             String elemento = calculo.get(i);
             if(calculadora.isOperator(elemento)){
                 int var1,var2;
-                var2 = Integer.parseInt((String) stack.pull());
-                var1 = Integer.parseInt((String) stack.pull());
+                var2 = stack.pull();
+                var1 = stack.pull();
                 switch (elemento){
                     case "+":
                         resultado = calculadora.suma(var1,var2);
+                        stack.push(resultado);
                         break;
                     case "-":
                         resultado = calculadora.resta(var1,var2);
+                        stack.push(resultado);
                         break;
                     case "*":
                         resultado = calculadora.multiplicacion(var1,var2);
+                        stack.push(resultado);
                         break;
                     case "/":
                         resultado = calculadora.division(var1,var2);
+                        stack.push(resultado);
                         break;
                 }
             }else {
-                stack.push(elemento);
+                stack.push(Integer.parseInt(elemento));
             }
         }
-        return resultado;
+        return stack.pull();
     }
 }
